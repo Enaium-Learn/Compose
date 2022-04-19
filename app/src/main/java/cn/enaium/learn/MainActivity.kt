@@ -1,12 +1,15 @@
 package cn.enaium.learn
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.selection.DisableSelection
 import androidx.compose.foundation.text.selection.SelectionContainer
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -41,19 +44,7 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    ComposeTheme {
-        SelectionContainer {
-            Column {
-                Text("This text is selectable")
-                Text("This one too")
-                Text("This one as well")
-                DisableSelection {
-                    Text("But not this one")
-                    Text("Neither this one")
-                }
-                Text("But again, you can select this one")
-                Text("And this one too")
-            }
-        }
-    }
+    Text("Click Me!", modifier = Modifier.clickable {
+        Log.d("TAG", "DefaultPreview: clickable")
+    })
 }
